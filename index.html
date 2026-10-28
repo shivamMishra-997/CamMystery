@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cam Mystery – Wedding Photography Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Gruppo&family=Jost:ital,wght@0,100..900;1,100..900&family=Parisienne&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,800&family=Quicksand:wght@300..700&family=Sekuya&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"><style>
+:root{--gold:#f8f7f6;--hi:#f4f4f4;--black:#0a0a0a;--paper:#f5f0e6;--ink:#161412;--card:#fffaf0;--mute:#6b6354;--line:rgba(201,162,75,.4);--hero:none;--ease:cubic-bezier(.2,.7,.2,1);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#14120f;--ink:#f1ebdd;--card:#1c1914;--mute:#a79e8c}}
+:root[data-theme="dark"]{--paper:#14120f;--ink:#f1ebdd;--card:#1c1914;--mute:#a79e8c}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--black)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font:400 16px/1.75 Montserrat,system-ui,sans-serif;color:#f1ebdd;background:var(--black);overflow-x:hidden}
+h1,h2,h3,.logo,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.12;margin:0}
+h2{font-size:clamp(2rem,5vw,3.3rem);margin-bottom:22px}h3{font-size:1.5rem;margin-bottom:10px}
+p{margin:0 0 1.1em;max-width:62ch}
+.gt{background:transparent; font-family: 'Carattere', cursive;;color:whitesmoke; font-size:clamp(3.6rem,13vw,10rem);}
+.sec{padding:clamp(70px,10vw,130px) 6vw;background:var(--paper);color:var(--ink)}
+.sec.dk{background:var(--black);color:#f1ebdd}
+.sec.gl{background:rgba(17, 17, 17, 0.8);color:#ffffff}
+.wrap{max-width:1160px;margin:auto}
+.lab{display:block;font:500 1.15rem 'Playfair Display',serif;color:whitesmoke;margin-bottom:12px}
+.btn{display:inline-block;padding:14px 30px;border:1px solid var(--gold);background:var(--gold);color:#0a0a0a;font:600 .85rem Montserrat,sans-serif;letter-spacing:.06em;text-decoration:none;cursor:pointer;transition:background .4s,color .4s,transform .4s var(--ease)}
+.btn:hover{background:transparent;color:var(--hi);transform:translateY(-2px)}
+.btn.o{background:transparent;color:#f1ebdd}.btn.o:hover{background:var(--gold);color:#0a0a0a}
+.btn.o2{background:transparent;color:var(--ink)}.btn.o2:hover{background:var(--gold);color:#0a0a0a}
+.btn svg{width:17px;margin-right:10px;vertical-align:-3px}
+.row{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+/* nav */
+.nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translateX(-50%);width:min(1100px,calc(100% - 28px));z-index:50;display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 26px;border-radius:999px;background:var(--black);border:1px solid var(--line);box-shadow:0 12px 40px -18px #000;transition:background .6s,backdrop-filter .6s,border-color .6s}
+body[data-page="home"] .nav{background:rgba(10,10,10,.28);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border-color:rgba(230,200,120,.25);box-shadow:none}
+.logo img{display:block;width:68px;height:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 0 8px rgba(201,162,75,.15));}
+.links{display:flex;align-items:center;gap:4px}
+.links a{color:#f1ebdd;text-decoration:none;font:500 .88rem Montserrat,sans-serif;padding:10px 16px;position:relative}
+.links a::after{content:"";position:absolute;left:16px;right:16px;bottom:5px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.links a:hover::after,.links a.act::after{transform:none}.links a.act{color:var(--hi)}
+.links .btn{margin-left:8px;padding:11px 24px;color:#0a0a0a;border-radius:999px}.links .btn::after{display:none}.links .btn:hover{color:var(--hi)}
+.burger{display:none;background:none;border:0;width:46px;height:42px;cursor:pointer;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:1.5px;background:var(--hi);transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:first-child{top:16px}.burger i:last-child{top:25px}
+.nav.open .burger i:first-child{top:20px;transform:rotate(45deg)}.nav.open .burger i:last-child{top:20px;transform:rotate(-45deg)}
+/* background + transitions */
+.fx{position:fixed;inset:0;z-index:0;display:none;background:linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.62)),url('images/image%201.jpg') center/cover no-repeat,radial-gradient(55% 50% at 72% 28%,rgba(201,162,75,.38),transparent 62%),radial-gradient(45% 45% at 15% 85%,rgba(201,162,75,.2),transparent 60%),linear-gradient(160deg,#241a0b,#050505);background-size:cover;background-position:center}
+.fx::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6))}
+body[data-page="home"] .fx{display:block}
+main,footer{position:relative;z-index:1}
+.page{display:none}.page.on{display:block}
+#cv{position:fixed;inset:0;z-index:100;background:var(--black);transform:translateY(100%);pointer-events:none;display:grid;place-items:center;color:var(--hi);font:italic 500 clamp(1.8rem,6vw,3rem) 'Playfair Display',serif}
+#cv.in{transform:none;pointer-events:all;transition:transform .7s cubic-bezier(.77,0,.18,1)}
+#cv.out{transform:translateY(-100%);transition:transform .7s cubic-bezier(.77,0,.18,1)}
+/* reveal */
+.rv{opacity:0}.rv.in{opacity:1;animation:up 1s var(--ease) var(--d,0s) backwards}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+@keyframes cue{50%{transform:scaleY(.4);opacity:.4}}
+/* hero */
+.hero{min-height:100svh;display:grid;align-items:center;text-align:left;padding:130px 6vw 70px}
+.hero>div{width:100%;max-width:1160px;margin:0 auto}
+.hero h1{font-size:clamp(3.6rem,13vw,10rem);letter-spacing:-.02em}
+.hero p{margin:22px 0 0;font-size:1.05rem;opacity:.92}
+.hero .row{justify-content:flex-start}
+.cue{width:1px;height:64px;background:linear-gradient(var(--gold),transparent);margin:54px 0 0;transform-origin:top;animation:cue 2.4s ease-in-out infinite}
+/* layout */
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.card{background:var(--card);border:1px solid var(--line);padding:38px 32px;transition:transform .6s var(--ease),border-color .4s}
+.card:hover{transform:translateY(-6px);border-color:transparent;}
+.gl .card,.dk .card{background:rgba(255,255,255,.035)}
+.phead{padding:170px 6vw 90px;text-align:center;background:radial-gradient(70% 90% at 50% 0,rgba(201,162,75,.28),transparent 70%),var(--black)}
+.phead h1{font-size:clamp(2.8rem,9vw,6rem)}
+.fig{position:relative;overflow:hidden;background:#1a150c;margin:0}
+.fig img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transform:scale(1.08);transition:opacity .9s,transform 1.6s var(--ease)}
+.fig img.ld{opacity:1;transform:none}.fig:hover img.ld{transform:scale(1.05)}
+.fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 20px 16px;font:italic 500 1.05rem 'Playfair Display',serif;color:var(--hi);background:linear-gradient(transparent,rgba(0,0,0,.8));transform:translateY(100%);transition:transform .6s var(--ease)}
+.fig:hover figcaption{transform:none}.fig.pp{animation:up .8s var(--ease) backwards}
+.mas{columns:3 260px;column-gap:16px}.mas .fig{break-inside:avoid;margin-bottom:16px}
+.flt{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:44px}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:34px}
+.ab{display:none}.ab.on{display:block;animation:up .8s var(--ease) backwards}
+.flt button,.tabs button{background:none;border:1px solid var(--line);color:#f1ebdd;padding:10px 22px;font:500 .85rem Montserrat,sans-serif;cursor:pointer;transition:background .4s,color .4s}
+.flt button:hover,.flt button.act,.tabs button:hover,.tabs button.act{background:var(--gold);color:#0a0a0a}
+#lb{position:fixed;inset:0;z-index:90;background:#050505;display:grid;place-items:center;padding:5vw;opacity:0;pointer-events:none;transition:opacity .5s;cursor:zoom-out;overflow:hidden;touch-action:pinch-zoom}
+#lb.on{opacity:1;pointer-events:auto}
+#lbb{position:absolute;left:-140px;top:-140px;width:calc(100% + 280px);height:calc(100% + 280px);object-fit:cover;filter:blur(50px) saturate(1.4) brightness(.55)}
+#lbi{position:relative;z-index:1;max-width:100%;max-height:88vh;border:1px solid var(--line);box-shadow:0 40px 120px -30px #000;transform:scale(.94);transition:transform .7s var(--ease)}#lb.on #lbi{transform:none}
+/* gallery: blurred ambient backdrop that follows the hovered / clicked photo */
+#gbg{position:fixed;inset:0;z-index:0;display:none;overflow:hidden;background:var(--black)}
+body[data-page="gallery"] #gbg{display:block}
+#gbg::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(5,5,5,.45),rgba(5,5,5,.72))}
+#gbg img{position:absolute;left:-140px;top:-140px;width:calc(100% + 280px);height:calc(100% + 280px);object-fit:cover;filter:blur(50px) saturate(1.4) brightness(.85);opacity:0;transition:opacity 1.1s var(--ease);will-change:opacity}
+#gbg img.on{opacity:1}
+#p-gallery .phead{background:radial-gradient(70% 90% at 50% 0,rgba(201,162,75,.28),transparent 70%)}
+#p-gallery .sec.dk{background:transparent}
+@media(hover:hover){#mas .fig{transition:opacity .6s var(--ease)}#mas:has(.fig:hover) .fig:not(:hover){opacity:.5}}
+/* team + pricing */
+.team>div{display:grid;grid-template-columns:minmax(180px,1fr) 2fr;gap:12px 40px;padding:28px 0;border-top:1px solid var(--line)}
+.team>div:last-child{border-bottom:1px solid var(--line)}.team h3{margin:0}.team p{margin:0;opacity:.85}
+.team .lead h3{color:var(--hi);font-size:1.9rem}
+.price{display:inline-block;font:500 2.7rem 'Playfair Display',serif;color:var(--gold);margin:6px 0 4px;text-decoration:none;border-bottom:1px solid transparent;transition:color .4s,border-color .4s,transform .5s var(--ease)}
+.price:hover{color:var(--hi);border-color:var(--hi);transform:translateX(4px)}
+.sm{font-size:.85rem;color:var(--mute)}
+.ck{list-style:none;padding:0;margin:22px 0 0}.ck li{padding:10px 0 10px 26px;border-top:1px solid var(--line);position:relative;font-size:.92rem}
+.ck li::before{content:"";position:absolute;left:2px;top:19px;width:9px;height:9px;border:1px solid var(--gold);transform:rotate(45deg)}
+.card.hl{background:var(--black);color:#f1ebdd;border-color:var(--gold)}.card.hl .sm{color:#b9b09c}
+.ad{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.ad a{border:1px solid var(--line);padding:9px 20px;font-size:.9rem;color:inherit;text-decoration:none;transition:background .4s,color .4s}.ad a:hover{background:var(--gold);color:#0a0a0a}
+/* form */
+.fld{width:100%;padding:15px 18px;margin-bottom:16px;background:transparent;border:1px solid var(--line);color:inherit;font:inherit;border-radius:0;transition:border-color .3s,box-shadow .3s}
+.fld:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.22)}
+.fld option{color:#111}textarea.fld{min-height:120px;resize:vertical}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.foot{background:#050505;color:#b9b09c;padding:60px 6vw 40px;text-align:center;border-top:1px solid var(--line)}
+.foot .logo{font-size:2rem;display:block;margin-bottom:18px}
+.foot nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 26px;margin-bottom:26px}.foot nav a{color:#f1ebdd;text-decoration:none;font-size:.9rem}.foot nav a:hover{color:var(--hi)}
+.foot small{font-size:.8rem}
+@media(max-width:860px){
+.burger{display:block}
+.links{position:absolute;top:calc(100% + 10px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:14px;border-radius:26px;background:rgba(10,10,10,.95);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--line);opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .4s,transform .5s var(--ease)}
+.nav.open .links{opacity:1;transform:none;pointer-events:auto}
+.links a{padding:14px 18px}.links a::after{left:18px;right:auto;width:30px}.links .btn{margin:8px 0 0;text-align:center}
+.split{grid-template-columns:1fr}.team>div{grid-template-columns:1fr}.f2{grid-template-columns:1fr}.phead{padding-top:140px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.rv{opacity:1}}
+</style>
+</head>
+<body data-page="home">
+<header class="nav">
+  <a class="logo" href="#home" data-nav="home"><img src="images/cam Logo.png" alt="Cam Mystery"width="100%" height="auto"></a>
+  <button class="burger" aria-label="Open menu"><i></i><i></i></button>
+  <nav class="links">
+    <a href="#home" data-nav="home">Home</a><a href="#about" data-nav="about">About us</a><a href="#gallery" data-nav="gallery">Gallery</a><a href="#services" data-nav="services">Services &amp; pricing</a><a href="#contact" data-nav="contact">Contact</a>
+    <a class="btn" href="#contact" data-nav="contact">Book your date</a>
+  </nav>
+</header>
+<div class="fx" aria-hidden="true"></div>
+<div id="gbg" aria-hidden="true"></div>
+<div id="cv" aria-hidden="true">Cam Mystery</div>
+
+<main>
+<!-- HOME -->
+<section class="page on" id="p-home">
+  <div class="hero"><div>
+    <span class="lab rv">Wedding photography studio</span>
+    <h1 class="gt rv" style="--d:.15s">Cam Mystery</h1>
+    <p class="rv" style="--d:.35s">You dream of momentous wedding? We make it a true.<br> All through your euphric journey, we walk with you.</p>
+    <div class="row rv" style="--d:.55s"><a class="btn" href="#gallery" data-nav="gallery">View gallery</a><a class="btn o" href="#contact" data-nav="contact">Book your date</a></div>
+    <div class="cue"></div>
+  </div></div>
+  <div class="sec gl"><div class="wrap">
+    <div class="split"><div class="rv"><span class="lab">Our philosophy</span><h2>Every love story has a little mystery</h2><p>Founded by Sajib Bhowmik, Cam Mystery photographs weddings the way they’re felt: through glances, laughter and the stillness between the rituals. No stiff poses. Just you, in your best light.</p></div>
+    <div class="g3" style="grid-template-columns:1fr">
+      <div class="card rv"><h3>Candid storytelling</h3><p class="sm" style="margin:0;color:inherit;opacity:.8">We stay out of the way and catch what’s real.</p></div>
+      <div class="card rv" style="--d:.12s"><h3>Cinematic frames</h3><p class="sm" style="margin:0;color:inherit;opacity:.8">Light, depth and colour treated like a film still.</p></div>
+      <div class="card rv" style="--d:.24s"><h3>Heirloom albums</h3><p class="sm" style="margin:0;color:inherit;opacity:.8">Hand-designed albums made to be passed down.</p></div>
+    </div></div>
+  </div></div>
+  <div class="sec gl" style="padding-top:0"><div class="wrap">
+    <span class="lab rv">Selected work</span><h2 class="rv">Moments we’ve been trusted with</h2>
+    <div class="g3" id="feat"></div>
+    <div class="row"><a class="btn o" href="#gallery" data-nav="gallery">Explore the full gallery</a></div>
+  </div></div>
+  <div class="sec gl"><div class="wrap rv">
+    <h2>Your date. Our lens.</h2><p>Tell us when and where, and we’ll let you know if we’re free to photograph your wedding.</p>
+    <div class="row"><a class="btn" data-wa data-ic>Chat on WhatsApp</a><a class="btn o" href="#services" data-nav="services">See packages</a></div>
+  </div></div>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="p-about">
+  <div class="phead"><span class="lab rv">Who we are</span><h1 class="gt rv" style="--d:.1s">About us</h1><div class="tabs rv" style="--d:.2s"><button class="act" data-tab="studio">About studio</button><button data-tab="team">About team</button></div></div>
+  <div class="sec"><div class="wrap split">
+    <div id="abimg" class="rv"></div>
+    <div class="rv" style="--d:.15s"><span class="lab">About the studio</span><h2>Quietly present. Beautifully timed.</h2>
+      <p>Cam Mystery is a wedding photography studio built on one belief: the best photographs are never staged. We blend into your celebration, read the room and wait for the moments that make your wedding yours.</p>
+      <p>From intimate ceremonies to week-long celebrations, we shape every project around your rituals, your families and your story, and deliver it with the care of a handmade album.</p>
+      <p class="serif" style="font-style:italic;color:var(--gold);font-size:1.4rem">Sajib Bhowmik, founder</p></div>
+  </div></div>
+  <div class="sec dk"><div class="wrap">
+    <span class="lab rv">About the team</span><h2 class="rv">The people behind the lens</h2>
+    <div class="team">
+      <div class="lead rv"><h3>Sajib Bhowmik<br><span class="sm" style="font:500 .9rem Montserrat;color:var(--gold)">Founder and lead photographer</span></h3><p>Sajib started Cam Mystery to tell wedding stories with honesty and warmth. He leads every shoot personally and shapes the look of each album.</p></div>
+      <div class="rv"><h3>Cinematographer</h3><p>Captures motion, sound and emotion for highlight films and full-length wedding features.</p></div>
+      <div class="rv"><h3>Candid photographer</h3><p>Moves through the celebration to catch unscripted laughter, tears and family moments.</p></div>
+      <div class="rv"><h3>Editor and album designer</h3><p>Colour-grades every frame and lays out each album page by hand.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- GALLERY -->
+<section class="page" id="p-gallery">
+  <div class="phead"><span class="lab rv">Our portfolio</span><h1 class="gt rv" style="--d:.1s">Gallery</h1></div>
+  <div class="sec dk"><div class="wrap">
+    <div class="flt rv"><button class="act" data-f="all">All</button><button data-f="pre">Pre-wedding</button><button data-f="wed">Wedding</button><button data-f="can">Candid</button><button data-f="rec">Reception</button></div>
+    <div class="mas" id="mas"></div>
+  </div></div>
+</section>
+
+<!-- SERVICES -->
+<section class="page" id="p-services">
+  <div class="phead"><span class="lab rv">Packages</span><h1 class="gt rv" style="--d:.1s">Services &amp; pricing</h1></div>
+  <div class="sec"><div class="wrap">
+    <h2 class="rv">Pick a starting point</h2><p class="rv" style="margin-bottom:46px">Every wedding is different. Choose the package closest to your plans and we’ll tailor it to your celebration. Tap a price or a book button to start a WhatsApp chat about that package.</p>
+    <div class="g3" style="align-items:stretch">
+      <div class="card rv"><h3>Essential</h3><p class="sm" style="margin:0">Starting at</p><a class="price" data-svc="Essential">₹45,000</a><p class="sm">For intimate ceremonies</p>
+        <ul class="ck"><li>1 lead photographer</li><li>Up to 6 hours of coverage</li><li>300+ edited photographs</li><li>Private online gallery</li></ul><a class="btn" data-svc="Essential" data-ic style="margin-top:26px">Book Essential</a></div>
+      <div class="card hl rv" style="--d:.12s"><h3>Signature</h3><p class="sm" style="margin:0">Starting at · most booked</p><a class="price" data-svc="Signature">₹85,000</a><p class="sm">For full-day weddings</p>
+        <ul class="ck"><li>Photo and cinematic video team</li><li>Full-day coverage, up to 10 hours</li><li>600+ edited photographs</li><li>Pre-wedding mini shoot</li><li>Premium 40-page album</li><li>Highlight reel</li></ul><a class="btn" data-svc="Signature" data-ic style="margin-top:26px">Book Signature</a></div>
+      <div class="card rv" style="--d:.24s"><h3>Royal</h3><p class="sm" style="margin:0">Starting at</p><a class="price" data-svc="Royal">₹1,50,000</a><p class="sm">For multi-day celebrations</p>
+        <ul class="ck"><li>2 photographers, 2 cinematographers</li><li>Multi-day coverage</li><li>Drone aerials</li><li>1,000+ edited photographs</li><li>2 premium albums and wall frames</li><li>Full cinematic wedding film</li></ul><a class="btn" data-svc="Royal" data-ic style="margin-top:26px">Book Royal</a></div>
+    </div>
+    <h3 style="margin-top:70px" class="rv">Add-ons</h3>
+    <div class="ad rv"><a data-svc="Pre-wedding shoot">Pre-wedding shoot</a><a data-svc="Drone coverage">Drone coverage</a><a data-svc="Extra albums and frames">Extra albums and frames</a><a data-svc="Same-day teaser">Same-day teaser</a><a data-svc="Engagement session">Engagement session</a></div>
+    <p class="sm" style="margin-top:26px">Prices are starting rates and can be adjusted to your event.</p>
+  </div></div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="p-contact">
+  <div class="phead"><span class="lab rv">Let’s plan your day</span><h1 class="gt rv" style="--d:.1s">Contact</h1></div>
+  <div class="sec"><div class="wrap split" style="align-items:start">
+    <div class="rv"><h2>Tell us your story</h2><p>Share your date, venue and the kind of coverage you have in mind. Your message opens in WhatsApp, ready to send, and we’ll reply there.</p>
+      <ul class="ck" style="margin-bottom:30px"><li>Studio: Cam Mystery, led by Sajib Bhowmik</li><li>Address: Nr. Modern club, Nagerjala, Agartala, India, 799003.</li><li>Bookings: send your date and venue to check availability</li><li>Replies: in your WhatsApp chat or by email</li></ul>
+      <div class="row" style="margin-top:0"><a class="btn" data-wa data-ic>Chat on WhatsApp</a><a class="btn o2" data-mail>Send an email</a></div></div>
+    <form class="card rv" id="cf" style="--d:.15s">
+      <input class="fld" name="n" placeholder="Your name" required autocomplete="name">
+      <input class="fld" name="a" placeholder="Address" autocomplete="street-address">
+      <div class="f2"><input class="fld" name="p" type="tel" placeholder="Phone number" required autocomplete="tel"><input class="fld" name="d" type="date" aria-label="Event date"></div>
+      <div class="f2"><select class="fld" name="t" aria-label="Event type"><option>Wedding</option><option>Pre-wedding</option><option>Engagement</option><option>Reception</option><option>Other</option></select><input class="fld" name="v" placeholder="Venue or city"></div>
+      <textarea class="fld" name="m" placeholder="Tell us about your celebration">Hi Cam Mystery! I’d like to book you for my wedding. Please share your availability, package details and the next steps.</textarea>
+      <button class="btn" type="submit" data-ic style="width:100%">Send on WhatsApp</button>
+      <button class="btn o2" type="button" id="em" style="width:100%;margin-top:12px">Send by email</button>
+    </form>
+  </div></div>
+</section>
+</main>
+
+<footer class="foot">
+  <a class="logo" href="#home" data-nav="home"><img src="images/cam Logo.png" alt="Cam Mystery" width="100%" height="auto"></a>
+  <nav><a href="#home" data-nav="home">Home</a><a href="#about" data-nav="about">About us</a><a href="#gallery" data-nav="gallery">Gallery</a><a href="#services" data-nav="services">Services &amp; pricing</a><a href="#contact" data-nav="contact">Contact</a></nav>
+  <small>© 2026 Cam Mystery. Photography by Sajib Bhowmik.</small>
+</footer>
+<div id="lb"><img id="lbb" alt="" aria-hidden="true"><img id="lbi" alt="Enlarged photograph"></div>
+
+<script>
+const WA='+9199744417359'; // replace with the studio WhatsApp number: country code + number, no "+"
+const SRC=[
+  'images/gallery 7.webp',
+  'images/gallery 2.jpg',
+  'images/gallery 3.jpg',
+  'images/gallery 4.webp',
+  'images/gallery 5.webp',
+  'images/gallery 6.webp',
+  'images/gallery 10.jpg',
+  'images/gallery%208.webp',
+  'images/Gallery%201.jpg',
+  'images/image%202.webp',
+  'images/Gallery%201.jpg',
+  'images/gallery%203.jpg',
+  'images/image%202.webp'
+];
+const G=[['Pre-wedding','pre','4/5'],['Ceremony','wed','1/1'],['Candid moments','can','3/4'],['Reception','rec','4/3'],['The vows','wed','3/4'],['Golden hour','pre','4/5'],['Bridal portrait','wed','1/1'],['Laughter','can','3/4'],['First dance','rec','4/3'],['Mehendi','can','4/5'],['Couple story','pre','3/4'],['The details','wed','1/1']];
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const WAI='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.2 14c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.6-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>';
+/* placeholder frames (swap for real photos via SRC) */
+const ph=(i,t)=>{const h=[38,42,34,46,30,40][i%6];return 'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h},55%,${22+i%4*4}%)"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient></defs><rect width="400" height="500" fill="url(#g)"/><circle cx="${120+i*37%200}" cy="${140+i*53%160}" r="90" fill="hsl(${h},60%,60%)" opacity=".18"/><text x="200" y="468" fill="#e6c878" font-family="Georgia,serif" font-style="italic" font-size="22" text-anchor="middle" opacity=".8">${t}</text></svg>`)};
+const fig=(i,t,r,c)=>`<figure class="fig" data-c="${c||''}" style="aspect-ratio:${r}"><img class="lz" data-src="${SRC[i]||ph(i,t)}" alt="${t}, wedding photograph by Cam Mystery" loading="lazy" decoding="async"><figcaption>${t}</figcaption></figure>`;
+$('#mas').innerHTML=G.map((g,i)=>fig(i,g[0],g[2],g[1])).join('');
+$('#feat').innerHTML=[0,2,5].map(i=>fig(i,G[i][0],'3/4')).join('');
+$('#abimg').innerHTML=fig(12,'Our studio','4/5');
+
+/* lazy loading + reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const m=e.target;m.onload=()=>m.classList.add('ld');m.src=m.dataset.src;io.unobserve(m)}}),{rootMargin:'250px'});
+$$('img.lz').forEach(m=>io.observe(m));
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.1});
+$$('.rv').forEach(x=>ro.observe(x));
+
+/* gallery: blurred ambient backdrop follows the hovered / clicked photo (new layer fades in on top, older ones are dropped after) */
+const gbg=$('#gbg');let gs='',ht=0,pin=0;
+const setBg=s=>{clearTimeout(ht);if(!s||s===gs)return;gs=s;const n=new Image();n.alt='';
+  n.onload=()=>{if(gs!==s)return;gbg.append(n);void n.offsetWidth;n.classList.add('on');setTimeout(()=>{while(n.previousElementSibling)n.previousElementSibling.remove()},1200)};n.src=s};
+const clrBg=()=>{clearTimeout(ht);gs='';$$('img',gbg).forEach(x=>x.classList.remove('on'));setTimeout(()=>{if(!gs)gbg.textContent=''},1200)};
+
+/* page router with curtain transition */
+const pages=$$('.page'),cv=$('#cv'),nav=$('.nav');
+const T={home:'Cam Mystery – Wedding Photography Studio',about:'About us – Cam Mystery',gallery:'Gallery – Cam Mystery',services:'Services & pricing – Cam Mystery',contact:'Contact – Cam Mystery'};
+let cur,busy;
+const show=id=>{pages.forEach(p=>p.classList.toggle('on',p.id==='p-'+id));document.body.dataset.page=id;clrBg();$$('.links [data-nav]').forEach(a=>a.classList.toggle('act',a.dataset.nav===id&&!a.classList.contains('btn')));nav.classList.remove('open');document.title=T[id];scrollTo({top:0,behavior:'instant'})};
+const go=id=>{if(!T[id])id='home';if(busy||id===cur)return;
+  if(!cur||matchMedia('(prefers-reduced-motion:reduce)').matches){show(id);cur=id;return}
+  busy=1;cv.className='in';
+  setTimeout(()=>{show(id);cur=id;cv.className='out';setTimeout(()=>{cv.className='';busy=0},750)},750)};
+document.addEventListener('click',e=>{const a=e.target.closest('[data-nav]');if(a){e.preventDefault();const id=a.dataset.nav;try{location.hash=id}catch(_){}go(id)}});
+addEventListener('hashchange',()=>go(location.hash.slice(1)));
+$('.burger').onclick=()=>nav.classList.toggle('open');
+
+/* about page: studio / team switch */
+const abS=$('#p-about>.sec:not(.dk)'),abT=$('#p-about>.sec.dk');abS.classList.add('ab','on');abT.classList.add('ab');
+$$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.classList.toggle('act',x===b));abS.classList.toggle('on',b.dataset.tab==='studio');abT.classList.toggle('on',b.dataset.tab==='team')});
+go(location.hash.slice(1));
+
+/* gallery filter + lightbox */
+$$('.flt button').forEach(b=>b.onclick=()=>{$$('.flt button').forEach(x=>x.classList.toggle('act',x===b));$$('#mas .fig').forEach(f=>{const s=b.dataset.f==='all'||f.dataset.c===b.dataset.f;f.hidden=!s;if(s){f.classList.remove('pp');void f.offsetWidth;f.classList.add('pp')}})});
+const lb=$('#lb'),lbi=$('#lbi'),lbb=$('#lbb'),mas=$('#mas');
+document.addEventListener('click',e=>{const f=e.target.closest('#mas .fig,#feat .fig');if(!f)return;const i=$('img',f);if(!i.src)return;
+  lbi.src=lbb.src=i.src;lb.classList.add('on');pin=1;if(mas.contains(f))setBg(i.src)});
+/* hover (mouse / pen) previews the photo as the page background; leaving the grid restores the default. Tap on touch keeps it. */
+mas.addEventListener('pointerover',e=>{if(e.pointerType==='touch'||pin)return;const f=e.target.closest('.fig'),i=f&&$('img',f);if(i&&i.src){clearTimeout(ht);ht=setTimeout(()=>setBg(i.src),70)}});
+mas.addEventListener('pointerleave',e=>{if(e.pointerType!=='touch'&&!pin)clrBg()});
+const shut=()=>{if(!lb.classList.contains('on'))return;lb.classList.remove('on');pin=0;setTimeout(()=>{if(matchMedia('(hover:hover)').matches&&!mas.matches(':hover'))clrBg()},250)};
+lb.onclick=shut;addEventListener('keydown',e=>e.key==='Escape'&&shut());
+
+/* smooth scrolling: eased mouse-wheel scroll (touch, keyboard and scrollbar stay native; off for reduced motion) */
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  let want=scrollY,pos=scrollY,raf=0,t0=0;
+  const limit=()=>document.documentElement.scrollHeight-innerHeight;
+  const step=t=>{pos+=(want-pos)*(1-Math.exp(-Math.min(Math.max(t-t0,1),48)/120));t0=t;
+    if(Math.abs(want-pos)<.5){pos=want;raf=0}else raf=requestAnimationFrame(step);
+    scrollTo({top:pos,behavior:'instant'})};
+  addEventListener('wheel',e=>{
+    if(e.ctrlKey||Math.abs(e.deltaX)>Math.abs(e.deltaY)||(e.target.closest&&e.target.closest('textarea,select')))return;
+    e.preventDefault();if(lb.classList.contains('on'))return;
+    want=Math.max(0,Math.min(limit(),want+e.deltaY*(e.deltaMode===1?34:e.deltaMode===2?innerHeight:1)));
+    if(!raf){t0=performance.now();raf=requestAnimationFrame(step)}
+  },{passive:false});
+  addEventListener('scroll',()=>{if(Math.abs(scrollY-pos)>2){cancelAnimationFrame(raf);raf=0;want=pos=scrollY}},{passive:true});
+}
+
+/* WhatsApp */
+const wa=(t='Hello Cam Mystery! I’d like to know more about your wedding photography packages.')=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+$$('[data-wa]').forEach(a=>{a.href=wa();a.target='_blank';a.rel='noopener'});
+$$('[data-ic]').forEach(a=>a.insertAdjacentHTML('afterbegin',WAI));
+/* package + add-on links: each opens WhatsApp with its own message */
+const SV={
+ Essential:'Hello Cam Mystery! I’m interested in the Essential package (starting at ₹45,000): 1 lead photographer, up to 6 hours of coverage, 300+ edited photographs and a private online gallery. Is my wedding date available, and what are the next steps?',
+ Signature:'Hello Cam Mystery! I’m interested in the Signature package (starting at ₹85,000): photo and cinematic video team, full-day coverage, 600+ edited photographs, a pre-wedding mini shoot, a premium 40-page album and a highlight reel. Is my wedding date available, and what are the next steps?',
+ Royal:'Hello Cam Mystery! I’m interested in the Royal package (starting at ₹1,50,000): 2 photographers and 2 cinematographers, multi-day coverage, drone aerials, 1,000+ edited photographs, 2 premium albums with wall frames and a full cinematic wedding film. Is my wedding date available, and what are the next steps?'};
+$$('[data-svc]').forEach(a=>{const k=a.dataset.svc;a.href=wa(SV[k]||`Hello Cam Mystery! I’d like to add “${k}” to my wedding booking. Could you share the details and pricing?`);a.target='_blank';a.rel='noopener'});
+$('#cf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),v=k=>(f.get(k)||'').toString().trim();
+  const t=`Hello Cam Mystery!\n\nName: ${v('n')}\nAddress: ${v('a')||'Not provided'}\nPhone: ${v('p')}\nEvent: ${v('t')}\nDate: ${v('d')||'Not decided'}\nVenue / city: ${v('v')||'Not decided'}\n\n${v('m')}`;
+  const a=document.createElement('a');a.href=wa(t);a.target='_blank';a.rel='noopener';a.click()};
+/* email */
+const EMAIL='cam.mystery2020@gmail.com'; // replace with the studio email address
+const mail=(s,b)=>`mailto:${EMAIL}?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(b)}`;
+const go2=u=>{const a=document.createElement('a');a.href=u;a.click()};
+$$('[data-mail]').forEach(a=>a.href=mail('Wedding photography enquiry','Hi Cam Mystery! I’d like to book you for my wedding. Please share your availability, package details and the next steps.'));
+$('#em').onclick=()=>{const f=$('#cf');if(!f.reportValidity())return;const d=new FormData(f),v=k=>(d.get(k)||'').toString().trim();
+  go2(mail(`${v('t')} enquiry from ${v('n')}`,`Name: ${v('n')}\nAddress: ${v('a')||'Not provided'}\nPhone: ${v('p')}\nEvent: ${v('t')}\nDate: ${v('d')||'Not decided'}\nVenue / city: ${v('v')||'Not decided'}\n\n${v('m')}`))};
+</script>
+</body>
+</html>
