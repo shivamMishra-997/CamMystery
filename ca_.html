@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<title>Shaadi Seasons – Indian Wedding Photography &amp; Films</title>
+<meta name="description" content="Shaadi Seasons captures the soul, grandeur and spontaneous magic of Indian weddings through candid photography and cinematic films.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--m:#6d1225;--m2:#8a1a31;--g:#c19a3b;--gd:#85621a;--k:#000;--w:#fff;--mute:#4a4244;--line:rgba(0,0,0,.12);--e:cubic-bezier(.22,.7,.2,1);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px;background:var(--w)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font:400 16px/1.8 Jost,system-ui,sans-serif;color:var(--k);background:var(--w);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--g);color:var(--k)}
+:focus-visible{outline:2px solid var(--gd);outline-offset:3px}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.1;margin:0;color:var(--m)}
+h2{font-size:clamp(2rem,4.6vw,3.4rem);margin-bottom:20px}h3{font-size:1.55rem;margin-bottom:8px}
+p{margin:0 0 1.1em;max-width:64ch;color:var(--mute)}
+a{color:inherit}
+.up{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+.sec{padding:clamp(70px,9vw,120px) 6vw}.sec.tint{background:#faf6ef}
+.wrap{max-width:1180px;margin:auto}
+.c{text-align:center}.c p{margin-inline:auto}
+.rule{display:block;width:56px;height:2px;background:var(--g);margin:0 0 22px}.c .rule{margin-inline:auto}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 34px;border:1px solid var(--g);background:var(--g);color:var(--k);font:500 .74rem Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .5s var(--e),color .5s var(--e),border-color .5s var(--e),transform .5s var(--e)}
+.btn:hover{background:var(--m);border-color:var(--m);color:var(--w);transform:translateY(-2px)}
+.btn.o{background:transparent;border-color:var(--m);color:var(--m)}.btn.o:hover{background:var(--m);color:var(--w)}
+.btn.ow{background:transparent;border-color:var(--w);color:var(--w)}.btn.ow:hover{background:var(--g);border-color:var(--g);color:var(--k)}
+.btn svg{width:16px;flex:none}
+.row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.c .row{justify-content:center}
+/* header */
+.hd{position:fixed;inset:env(safe-area-inset-top,0px) 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 4vw;color:var(--w);transition:background .6s var(--e),color .6s var(--e),box-shadow .6s var(--e),padding .6s var(--e)}
+.hd.sc,body:not([data-page="home"]) .hd{background:rgba(255,255,255,.98);color:var(--k);box-shadow:0 1px 0 var(--line)}
+.hd.sc{padding-block:12px}
+.logo{font:600 1.75rem 'Cormorant Garamond',serif;text-decoration:none;letter-spacing:.02em;white-space:nowrap}
+.logo b{color:var(--g);font-weight:600}
+.lk{display:flex;align-items:center;gap:clamp(14px,2.2vw,34px)}
+.lk a{text-decoration:none;position:relative;padding:6px 0}
+.lk a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--g);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--e)}
+.lk a:not(.btn):hover::after,.lk a.act::after{transform:none}
+.ph{display:flex;align-items:center;gap:14px}
+.ph>a:first-child{text-decoration:none;font-weight:500;letter-spacing:.08em;font-size:.85rem}
+.ph .btn{padding:11px 24px}
+.bg{display:none;background:none;border:0;width:44px;height:40px;cursor:pointer;position:relative;color:inherit}
+.bg i{position:absolute;left:10px;right:10px;height:1.5px;background:currentColor;transition:transform .4s var(--e),top .4s var(--e)}
+.bg i:first-child{top:14px}.bg i:last-child{top:24px}
+.hd.open .bg i:first-child{top:19px;transform:rotate(45deg)}.hd.open .bg i:last-child{top:19px;transform:rotate(-45deg)}
+/* pages */
+.page{display:none}.page.on{display:block}
+main{transition:opacity .45s var(--e)}main.fade{opacity:0}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;color:var(--w);background:linear-gradient(150deg,var(--m),#1a0309);overflow:hidden}
+.sl{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}.sl.on{opacity:1}
+.sl img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 9s linear,opacity 1s}
+.sl.on img{transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.25) 40%,rgba(60,6,18,.85))}
+.hero .in{position:relative;z-index:2;padding:140px 6vw 90px;max-width:1180px;margin:auto;width:100%}
+.hero h1{color:var(--w);font-size:clamp(2.8rem,8vw,6.4rem);max-width:15ch}
+.hero p{color:rgba(255,255,255,.88);font-size:1.1rem;margin-top:22px}
+.hero .up{color:var(--g);display:block;margin-bottom:22px}
+.dots{position:absolute;right:6vw;bottom:90px;z-index:2;display:flex;gap:10px}
+.dots i{width:34px;height:2px;background:rgba(255,255,255,.4);transition:background .6s}.dots i.on{background:var(--g)}
+/* photos + lazy */
+.fig{position:relative;overflow:hidden;margin:0;background:#efe6d6;isolation:isolate}
+.fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transform:scale(1.04);backface-visibility:hidden;transition:opacity .8s var(--e),transform 1.2s var(--e)}
+.fig img.ld{opacity:1;transform:none}
+.sl img.ld{transform:none}
+@media(hover:hover){.fig:hover img.ld{transform:scale(1.05)}}
+.sl img{opacity:0}.sl img.ld{opacity:1}
+.fig figcaption{position:absolute;inset:auto 0 0 0;padding:40px 20px 16px;color:var(--w);font:italic 500 1.2rem 'Cormorant Garamond',serif;background:linear-gradient(transparent,rgba(60,6,18,.85));transform:translateY(100%);transition:transform .6s var(--e)}
+.fig:hover figcaption{transform:none}
+/* about split + table */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.frame{position:relative}.frame::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--g)}.frame .fig{position:relative;z-index:1}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:1px solid var(--line)}
+.feat div{padding:34px 28px 34px 0;border-bottom:1px solid var(--line)}.feat h3{font-size:1.4rem}.feat p{font-size:.95rem;margin:0}
+.quote{font:italic 500 clamp(1.6rem,3.4vw,2.5rem)/1.3 'Cormorant Garamond',serif;color:var(--m);max-width:26ch;margin:0 auto}
+/* chapters strip */
+.strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:6px}.strip::-webkit-scrollbar{display:none}
+.strip .fig{flex:0 0 min(340px,78vw);aspect-ratio:3/4;scroll-snap-align:start}
+.ctl{display:flex;align-items:center;gap:12px;margin-top:26px}
+.ctl button{width:48px;height:48px;border:1px solid var(--m);background:transparent;color:var(--m);cursor:pointer;font-size:1.2rem;transition:background .4s,color .4s}.ctl button:hover{background:var(--m);color:var(--w)}
+.ctl span{margin-left:8px;font-weight:500;letter-spacing:.12em;color:var(--gd)}
+/* services */
+.svc{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:20px 40px;padding:44px 0;border-top:1px solid var(--line);align-items:start}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc>span{font:italic 500 3rem 'Cormorant Garamond',serif;color:var(--g);line-height:1}
+.svc p{margin:0}
+ul.ck{list-style:none;margin:0;padding:0}
+ul.ck li{position:relative;padding:7px 0 7px 26px;color:var(--mute);font-size:.95rem}
+ul.ck li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:8px;background:var(--g);transform:rotate(45deg)}
+/* testimonials */
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.tc{background:var(--w);border:1px solid var(--line);border-top:3px solid var(--g);padding:38px 30px;transition:transform .6s var(--e),box-shadow .6s var(--e)}
+.tc:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(109,18,37,.45)}
+.tc .st{color:var(--g);letter-spacing:.2em;margin-bottom:14px}.tc h3{font-size:1.45rem}.tc p{font-style:italic;font-size:.96rem}
+.tc b{display:block;color:var(--k);font-weight:500}.tc small{color:var(--gd);letter-spacing:.1em}
+/* cta band */
+.band{background:linear-gradient(150deg,var(--m),#2a0510);color:var(--w);text-align:center}
+.band h2{color:var(--w)}.band p{color:rgba(255,255,255,.85);margin-inline:auto}.band .up{color:var(--g)}
+/* page head + portfolio */
+.phead{padding:170px 6vw 70px;text-align:center;background:#faf6ef;border-bottom:1px solid var(--line)}
+.phead h1{font-size:clamp(2.6rem,7vw,5rem)}.phead p{margin:16px auto 0}
+.flt{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:44px}
+.flt button{background:transparent;border:1px solid var(--line);padding:11px 26px;font:500 .74rem Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .4s,color .4s,border-color .4s}
+.flt button:hover{border-color:var(--m);color:var(--m)}.flt button.act{background:var(--m);border-color:var(--m);color:var(--w)}
+.mas{display:flex;align-items:flex-start;gap:16px;transition:opacity .24s var(--e)}.mas.swap{opacity:0}
+.mas .col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:16px}
+.mas .fig{cursor:zoom-in}.mas .fig.enter{animation:pp .7s var(--e) backwards;animation-delay:var(--d,0s)}
+@keyframes pp{from{opacity:0;transform:translateY(22px)}}
+/* contact */
+.fld{width:100%;padding:15px 18px;margin-bottom:14px;background:var(--w);border:1px solid var(--line);font:inherit;color:var(--k);transition:border-color .3s,box-shadow .3s}
+.fld:focus{outline:none;border-color:var(--g);box-shadow:0 0 0 3px rgba(193,154,59,.25)}textarea.fld{min-height:120px;resize:vertical}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+/* footer */
+.ft{background:var(--k);color:rgba(255,255,255,.75);padding:80px 6vw 36px}
+.ft .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
+.ft h3{color:var(--g);font-size:.78rem;font-family:Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
+.ft p{color:rgba(255,255,255,.7);font-size:.95rem}.ft a{text-decoration:none;display:block;padding:4px 0;transition:color .3s}.ft a:hover{color:var(--g)}
+.ft .logo{color:var(--w);display:inline-block;margin-bottom:14px}
+.ft small{display:block;max-width:1180px;margin:56px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);font-size:.8rem}
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:90;background:rgba(20,2,8,.94);display:grid;place-items:center;padding:5vw;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .4s var(--e),visibility 0s linear .4s;cursor:zoom-out}
+#lb.on{opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
+#lb img{max-width:100%;max-height:88vh;transform:scale(.96);transition:transform .6s var(--e)}#lb.on img{transform:none}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--e) var(--d,0s),transform 1s var(--e) var(--d,0s)}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+.bg{display:block}.ph>a:first-child{display:none}
+.lk{position:fixed;inset:0;background:var(--w);color:var(--k);flex-direction:column;justify-content:center;gap:26px;font-size:.9rem;opacity:0;visibility:hidden;transition:opacity .5s var(--e),visibility .5s}
+.hd.open .lk{opacity:1;visibility:visible}.hd.open{color:var(--k)}.bg,.logo,.ph{position:relative;z-index:2}
+.split,.svc,.ft .wrap{grid-template-columns:1fr}.f2{grid-template-columns:1fr}.dots{display:none}.svc>span{font-size:2.2rem}
+.frame::before{inset:12px -12px -12px 12px}.phead{padding-top:130px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body data-page="home">
+<header class="hd" id="hd">
+  <a class="logo" href="#home" data-nav="home">Shaadi <b>Seasons</b></a>
+  <nav class="lk up" id="lk">
+    <a href="#home" data-nav="home">Home</a><a href="#about" data-nav="about">About us</a><a href="#portfolio" data-nav="portfolio">Portfolio</a><a href="#films" data-nav="films">Films</a><a href="#services" data-nav="services">Services</a><a href="#contact" data-nav="contact">Contact</a>
+  </nav>
+  <div class="ph"><a data-tel class="up">Call us</a><a class="btn" href="#contact" data-nav="contact">Book now</a><button class="bg" id="bg" aria-label="Open menu"><i></i><i></i></button></div>
+</header>
+
+<main id="main">
+<!-- HOME -->
+<section class="page on" id="p-home">
+  <div class="hero" id="hero">
+    <div id="slides"></div>
+    <div class="in">
+      <span class="up rv">Photography · Cinematography · Storytelling</span>
+      <h1 class="rv" style="--d:.15s">Capturing timeless Indian wedding stories</h1>
+      <p class="rv" style="--d:.3s">From the quiet Mehendi to the grand Baraat and the holy Pheras, we craft cinematic heirlooms you can relive for a lifetime.</p>
+      <div class="row rv" style="--d:.45s"><a class="btn" href="#portfolio" data-nav="portfolio">Explore our work</a><a class="btn ow" href="#contact" data-nav="contact">Check your date</a></div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <div class="sec"><div class="wrap split">
+    <div class="rv"><span class="rule"></span><h2>Your wedding photos should feel as magical as the moments themselves</h2>
+      <p>An Indian wedding isn’t just an event. It’s a multi-generational festival of deep traditions, candid laughter and unforgettable emotional milestones.</p>
+      <p>We combine the artistic eye of candid photojournalism with the polished elegance of high-fashion editorial portraiture, honouring everything from golden marigold mandaps to the intricate details of bridal lehengas.</p>
+      <div class="row"><a class="btn o" href="#about" data-nav="about">Our story</a></div></div>
+    <div class="frame rv" style="--d:.15s" id="homeimg"></div>
+  </div></div>
+
+  <div class="sec tint"><div class="wrap">
+    <div class="c rv"><span class="rule"></span><h2>Every chapter, beautifully captured</h2><p>Pre-wedding shoots, Haldi, Sangeet, the main ceremony and the grand reception.</p></div>
+    <div class="strip" id="strip"></div>
+    <div class="ctl"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button><span id="cnt">1 / 6</span></div>
+  </div></div>
+
+  <div class="sec"><div class="wrap">
+    <div class="c rv"><span class="rule"></span><h2>What sets us apart</h2></div>
+    <div class="feat" id="feat"></div>
+  </div></div>
+
+  <div class="sec tint"><div class="wrap">
+    <div class="c rv"><span class="rule"></span><h2>Words from our couples</h2></div>
+    <div class="tg" id="tg" style="margin-top:40px"></div>
+  </div></div>
+
+  <div class="sec band"><div class="wrap rv">
+    <span class="up">Let’s create something timeless</span>
+    <h2 style="margin-top:14px">Let your beautiful love story begin with us</h2>
+    <p>Tell us your date and venue, and we’ll let you know if we’re free to photograph your celebration.</p>
+    <div class="row" style="justify-content:center"><a class="btn" data-wa data-ic>Chat on WhatsApp</a><a class="btn ow" href="#contact" data-nav="contact">Send an enquiry</a></div>
+  </div></div>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="p-about">
+  <div class="phead"><span class="up" style="color:var(--gd)">About us</span><h1 style="margin-top:12px">Capturing timeless Indian wedding stories</h1>
+    <p>Welcome to Shaadi Seasons, where sacred rituals, vibrant Indian heritage and deep emotions meet timeless visual storytelling.</p></div>
+  <div class="sec"><div class="wrap split">
+    <div class="frame rv" id="abimg"></div>
+    <div class="rv" style="--d:.15s"><span class="rule"></span><h2>Our story &amp; craft</h2>
+      <p>We are a premier Indian wedding photography studio dedicated to capturing the soul, grandeur and spontaneous magic of South Asian weddings. From the quiet, intricate moments of the Mehendi to the grand energy of the Baraat and the timeless promises around the holy Pheras, we craft cinematic heirlooms.</p>
+      <p>Our studio was founded on a simple belief: <b>your wedding photos should feel as vivid, honest and magical as the moments themselves.</b></p>
+      <p>We combine the artistic eye of candid photojournalism with the polished elegance of high-fashion editorial portraiture. Every image honours the rich textures of traditional craftsmanship, from the golden glow of marigold mandaps to the details of bridal lehengas and royal heritage aesthetics.</p>
+      <p class="serif" style="font-style:italic;color:var(--gd);font-size:1.5rem;margin:0">Manish Susodhiya, founder</p></div>
+  </div></div>
+  <div class="sec tint"><div class="wrap"><div class="c rv"><span class="rule"></span><h2>What sets us apart</h2></div><div class="feat" id="feat2"></div></div></div>
+  <div class="sec"><div class="c rv"><p class="quote">“We don’t just record how your wedding looked. We preserve how it felt.”</p><div class="row"><a class="btn" href="#contact" data-nav="contact">Book your date</a></div></div></div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="page" id="p-portfolio">
+  <div class="phead"><span class="up" style="color:var(--gd)">Portfolio</span><h1 style="margin-top:12px">The love stories we’ve told</h1><p>Browse candid, cinematic and emotional moments from weddings, love stories and engagements.</p></div>
+  <div class="sec"><div class="wrap">
+    <div class="flt" id="flt"><button class="act" data-f="all">All</button><button data-f="wed">Weddings</button><button data-f="lov">Love story</button><button data-f="eng">Engagement</button></div>
+    <div class="mas" id="mas"></div>
+    <div class="row" style="justify-content:center"><button class="btn o" id="more">Load more</button></div>
+  </div></div>
+</section>
+
+<!-- FILMS -->
+<section class="page" id="p-films">
+  <div class="phead"><span class="up" style="color:var(--gd)">Films</span><h1 style="margin-top:12px">Experience your wedding like a motion picture</h1><p>High-definition narrative films that capture the sounds, music and raw emotions of your celebration.</p></div>
+  <div class="sec"><div class="wrap split">
+    <div class="rv"><span class="rule"></span><h2>Cinematic wedding films</h2><ul class="ck"><li>3–5 minute cinematic highlight trailer, optimised for sharing</li><li>30–60 minute feature film covering key rituals and speeches</li><li>Professional sound capture and colour grading</li><li>Optional 4K drone aerial coverage for grand venues and outdoor processions</li></ul>
+      <div class="row"><a class="btn" data-wa data-ic>Ask about films</a></div></div>
+    <div class="frame rv" style="--d:.15s" id="filmimg"></div>
+  </div></div>
+</section>
+
+<!-- SERVICES -->
+<section class="page" id="p-services">
+  <div class="phead"><span class="up" style="color:var(--gd)">Photography services</span><h1 style="margin-top:12px">Every Indian wedding is a unique story</h1><p>Comprehensive, tailored packages across all pre-wedding and wedding day events, so no precious moment goes uncaptured.</p></div>
+  <div class="sec"><div class="wrap" id="svc"></div></div>
+  <div class="sec band"><div class="wrap rv"><h2>Let’s plan your package</h2><p>Share your events and dates and we’ll tailor the coverage to your celebration.</p><div class="row" style="justify-content:center"><a class="btn" href="#contact" data-nav="contact">Enquire now</a></div></div></div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="p-contact">
+  <div class="phead"><span class="up" style="color:var(--gd)">Contact</span><h1 style="margin-top:12px">Let’s plan your day</h1></div>
+  <div class="sec"><div class="wrap split" style="align-items:start">
+    <div class="rv"><span class="rule"></span><h2>Tell us your story</h2><p>Share your date, venue and the coverage you have in mind. Your message opens in WhatsApp, ready to send.</p>
+      <ul class="ck"><li>Studio: Shaadi Seasons, led by Manish Susodhiya</li><li>Phone: <a data-tel></a></li><li>Email: <a data-mail-t></a></li></ul>
+      <div class="row"><a class="btn" data-wa data-ic>Chat on WhatsApp</a><a class="btn o" data-mail>Send an email</a></div></div>
+    <form class="rv" id="cf" style="--d:.15s">
+      <input class="fld" name="n" placeholder="Your name" required autocomplete="name">
+      <div class="f2"><input class="fld" name="p" type="tel" placeholder="Phone number" required autocomplete="tel"><input class="fld" name="d" type="date" aria-label="Event date"></div>
+      <div class="f2"><select class="fld" name="t" aria-label="Event type"><option>Wedding</option><option>Pre-wedding</option><option>Engagement</option><option>Reception</option><option>Other</option></select><input class="fld" name="v" placeholder="Venue or city"></div>
+      <textarea class="fld" name="m" placeholder="Tell us about your celebration">Hi Shaadi Seasons! I’d like to book you for my wedding. Please share your availability, package details and the next steps.</textarea>
+      <button class="btn" type="submit" style="width:100%" data-ic>Send on WhatsApp</button>
+      <button class="btn o" type="button" id="em" style="width:100%;margin-top:12px">Send by email</button>
+    </form>
+  </div></div>
+</section>
+</main>
+
+<footer class="ft"><div class="wrap">
+  <div><a class="logo" href="#home" data-nav="home">Shaadi <b>Seasons</b></a><p>An Indian wedding photography and film studio founded by Manish Susodhiya, preserving how your celebration felt.</p></div>
+  <div><h3>Explore</h3><a href="#home" data-nav="home">Home</a><a href="#about" data-nav="about">About us</a><a href="#portfolio" data-nav="portfolio">Portfolio</a><a href="#films" data-nav="films">Films</a><a href="#services" data-nav="services">Services</a><a href="#contact" data-nav="contact">Contact</a></div>
+  <div><h3>Get in touch</h3><a data-tel></a><a data-mail-t></a><a class="btn" href="#contact" data-nav="contact" style="margin-top:14px;display:inline-flex">Book now</a></div>
+</div><small>© 2026 Shaadi Seasons. Photography by Manish Susodhiya.</small></footer>
+<div id="lb"><img id="lbi" alt="Enlarged photograph"></div>
+
+<script>
+/* ---- edit these ---- */
+const WA='919974417359';            // WhatsApp: country code + number, no "+"
+const PHONE='+91 99744 17359';      // shown in the header and footer
+const EMAIL='hello@shaadiseasons.com';
+/* images: keep your existing files in /images; a styled placeholder shows if one is missing */
+const SRC=['images/image%201.jpg','images/gallery%207.jpg','images/gallery%202.jpg','images/gallery%203.jpg','images/gallery%204.jpg','images/gallery%205.jpg','images/gallery%206.jpg','images/gallery%2010.jpg','images/gallery%208.jpg','images/Gallery%201.jpg','images/image%202.jpg','images/gallery%209.jpg'];
+const G=[['Haldi','wed','4/5'],['Mehendi','wed','1/1'],['Baraat','wed','3/4'],['Pheras','wed','4/3'],['Pre-wedding','lov','3/4'],['Golden hour','lov','4/5'],['Heritage palace','lov','1/1'],['The ring','eng','3/4'],['Sangeet night','wed','4/3'],['Couple story','lov','4/5'],['Engagement','eng','3/4'],['The details','wed','1/1']];
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const WAI='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.2 14c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.6-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>';
+const ph=(t,i=0)=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${['#f3e7cf','#ead3d6','#f6efe0'][i%3]}"/><stop offset="1" stop-color="#d9b866"/></linearGradient></defs><rect width="400" height="500" fill="url(#g)"/><circle cx="${120+i*47%200}" cy="${160+i*61%140}" r="95" fill="#6d1225" opacity=".12"/><text x="200" y="465" fill="#6d1225" font-family="Georgia,serif" font-style="italic" font-size="24" text-anchor="middle">${t}</text></svg>`);
+const img=(i,t,eager)=>`<img class="lz" data-src="${SRC[i%SRC.length]}" data-ph="${ph(t,i)}" alt="${t}, Indian wedding photograph by Shaadi Seasons" decoding="async">`;
+const fig=(i,t,r,c)=>`<figure class="fig" data-c="${c||''}" style="aspect-ratio:${r}">${img(i,t)}<figcaption>${t}</figcaption></figure>`;
+
+/* content from the website copy guide */
+const FEAT=[['Candid storytelling','We focus on genuine emotions (unguarded smiles, tearful Vidaai moments and spontaneous joy) rather than forced, artificial posing.'],['Cultural precision','Deep familiarity with multi-day South Asian wedding rituals keeps us in position for the most sacred and fast-moving moments.'],['Bespoke colour &amp; tones','Rich, warm and true-to-life colour processing designed to celebrate the festive palette of Indian weddings.'],['End-to-end experience','Full coverage across every chapter: pre-wedding shoots, Haldi, Sangeet, the main ceremony and the grand reception.']];
+const SVC=[['Fine-art wedding photography','Our signature service combines candid documentary photography with stylised bridal and couple portraits.',['Full-day coverage of all ritual ceremonies (Baraat, Varmala, Pheras, Vidaai)','Dual-photographer setup: lead candid specialist plus traditional portrait artist','High-resolution, colour-graded digital gallery with full printing rights','Dedicated framing of heirloom family portraits']],
+['Cinematic wedding films','Experience your wedding like a motion picture, with sound, music and raw emotion.',['3–5 minute cinematic highlight trailer','30–60 minute feature film covering key rituals and speeches','Professional sound capture and colour grading','Optional 4K drone aerial coverage']],
+['Pre-wedding &amp; concept shoots','Tell your love story before the main event begins with a shoot that reflects your personalities.',['Themes in heritage palaces, scenic outdoors or modern urban settings','Styling advice and location scouting','Short cinematic reel set to your favourite soundtrack']],
+['Pre-wedding ceremonies coverage','Indian weddings are week-long celebrations, and we cover every festivity.',['Vibrant colour capture for Haldi and Mehendi','Dynamic motion and low-light coverage for Sangeet and cocktail nights','Family ritual documentation (Pooja, Bhaat, Gharoli)']],
+['Handcrafted heirloom albums','Preserve your memories in custom-crafted, museum-quality wedding albums.',['Flush-mount, lay-flat designs on archival paper','Leather, velvet or silk linen covers with foil-stamped lettering','Professional album layout and photo curation']]];
+const TS=[['They captured the soul of our wedding!','Shaadi Seasons made our 3-day wedding look straight out of a dream. From the chaotic fun of our Haldi to the quiet, emotional moments during the Pheras, their team was incredibly polite, non-intrusive, and always in the right spot at the right time.','Ananya &amp; Rohan Sharma','New Delhi'],['Absolute perfection in every frame.','Their understanding of traditional Indian rituals meant they never missed a crucial moment. The cinematic video trailer blew our families away. The colour grading and music selection were flawless!','Priya &amp; Devansh Patel','Ahmedabad'],['Artistic, professional, and deeply passionate.','We were camera-shy during our pre-wedding shoot, but the team made us feel so comfortable and natural. The final photos were candid, warm, and felt so authentic to who we are as a couple.','Riya &amp; Krrish Verma','Mumbai']];
+const fh=FEAT.map((f,i)=>`<div class="rv" style="--d:${i*.1}s"><h3>${f[0]}</h3><p>${f[1]}</p></div>`).join('');
+$('#feat').innerHTML=fh;$('#feat2').innerHTML=fh;
+$('#svc').innerHTML=SVC.map((s,i)=>`<div class="svc rv"><span>${i+1}</span><div><h3>${s[0]}</h3><p>${s[1]}</p></div><ul class="ck">${s[2].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+$('#tg').innerHTML=TS.map((t,i)=>`<div class="tc rv" style="--d:${i*.12}s"><div class="st">★★★★★</div><h3>${t[0]}</h3><p>${t[1]}</p><b>${t[2]}</b><small class="up">${t[3]}</small></div>`).join('');
+$('#homeimg').innerHTML=fig(2,'Baraat','4/5');$('#abimg').innerHTML=fig(4,'Our studio','4/5');$('#filmimg').innerHTML=fig(3,'Wedding film','4/3');
+$('#strip').innerHTML=['Pre-wedding','Haldi','Mehendi','Sangeet','Pheras','Reception'].map((t,i)=>fig(i+1,t,'3/4')).join('');
+$('#slides').innerHTML=[0,1,2].map((i,k)=>`<div class="sl${k?'':' on'}">${img(i,'Shaadi Seasons',k===0)}</div>`).join('');
+$('#dots').innerHTML='<i class="on"></i><i></i><i></i>';
+
+/* lazy loading: decode off the main thread first, then fade in, so a big JPEG never stalls a frame mid-animation.
+   Falls back to a styled placeholder if a file is missing. The strip gets its own observer because its
+   horizontal scroller clips the page-level one. */
+const load=m=>{const ok=()=>{const go=()=>requestAnimationFrame(()=>m.classList.add('ld'));m.decode?m.decode().then(go,go):go()};
+  m.onload=ok;m.onerror=()=>{m.onerror=null;m.src=m.dataset.ph};m.src=m.dataset.src};
+const mk=o=>new IntersectionObserver((es,ob)=>es.forEach(e=>{if(e.isIntersecting){ob.unobserve(e.target);load(e.target)}}),o);
+const st=$('#strip'),lz=mk({rootMargin:'400px'}),lzs=mk({root:st,rootMargin:'0px 800px'});
+const watch=r=>$$('img.lz:not([src])',r).forEach(m=>(st.contains(m)?lzs:lz).observe(m));watch();
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.12});
+const reveal=r=>$$('.rv:not(.in)',r).forEach(x=>ro.observe(x));reveal();
+
+/* hero slideshow */
+const sl=$$('.sl'),dt=$$('#dots i');let si=0;
+setInterval(()=>{if(document.body.dataset.page!=='home'||document.hidden)return;sl[si].classList.remove('on');dt[si].classList.remove('on');si=(si+1)%sl.length;sl[si].classList.add('on');dt[si].classList.add('on')},6000);
+
+/* chapters strip */
+const cnt=$('#cnt'),n=st.children.length;let ut=0;
+const upd=()=>{ut=0;cnt.textContent=(Math.round(st.scrollLeft/(st.scrollWidth/n))+1)+' / '+n};
+st.addEventListener('scroll',()=>{ut||(ut=requestAnimationFrame(upd))},{passive:true});
+$('#next').onclick=()=>st.scrollBy({left:st.firstElementChild.offsetWidth+18,behavior:'smooth'});
+$('#prev').onclick=()=>st.scrollBy({left:-(st.firstElementChild.offsetWidth+18),behavior:'smooth'});
+
+/* portfolio: stable masonry + filter + load more + lightbox.
+   Tiles are built once and only ever appended to the shortest column, so nothing reflows or reloads. */
+const mas=$('#mas'),more=$('#more'),GAP=16,MINW=260,MAXC=3;
+const ITEMS=[...G,...G].map((g,i)=>{const d=document.createElement('div');d.innerHTML=fig(i+1,g[0],g[2],g[1]);const [w,h]=g[2].split('/');return{el:d.firstElementChild,cat:g[1],r:h/w}});
+let f='all',shown=6,cols=0,colW=0,colEls=[],hs=[],swapT=0;
+const list=()=>ITEMS.filter(x=>f==='all'||x.cat===f);
+const build=k=>{colW=(mas.clientWidth-(k-1)*GAP)/k;colEls=Array.from({length:k},()=>{const c=document.createElement('div');c.className='col';return c});hs=Array(k).fill(0);mas.replaceChildren(...colEls)};
+const place=(it,d)=>{let k=0;for(let j=1;j<hs.length;j++)if(hs[j]<hs[k]-1)k=j;const el=it.el;
+  if(d==null)el.classList.remove('enter');
+  else{el.style.setProperty('--d',d+'s');el.classList.add('enter');el.addEventListener('animationend',()=>el.classList.remove('enter'),{once:true})}
+  colEls[k].appendChild(el);hs[k]+=colW*it.r+GAP};
+const toggleMore=L=>{more.style.display=L.length>shown?'':'none'};
+const fill=anim=>{if(!cols)return;const L=list();build(cols);L.slice(0,shown).forEach((it,i)=>place(it,anim?Math.min(i,8)*.06:null));toggleMore(L);watch(mas)};
+const ensure=()=>{const w=mas.clientWidth;if(!w)return;const k=Math.max(1,Math.min(MAXC,Math.floor((w+GAP)/(MINW+GAP))));if(k===cols)return;cols=k;fill(false)};
+let rz=0;addEventListener('resize',()=>{rz||(rz=requestAnimationFrame(()=>{rz=0;ensure()}))},{passive:true});
+const fb=$$('#flt button');
+fb.forEach(b=>b.onclick=()=>{if(b.dataset.f===f)return;fb.forEach(x=>x.classList.toggle('act',x===b));f=b.dataset.f;shown=6;
+  clearTimeout(swapT);mas.style.minHeight=mas.offsetHeight+'px';mas.classList.add('swap');   /* fade out, hold height so the page can't jump */
+  swapT=setTimeout(()=>{fill(true);mas.classList.remove('swap');swapT=setTimeout(()=>mas.style.minHeight='',900)},matchMedia('(prefers-reduced-motion:reduce)').matches?0:250)});
+more.onclick=()=>{const L=list(),from=shown;shown+=6;L.slice(from,shown).forEach((it,i)=>place(it,i*.07));toggleMore(L);watch(mas)};
+const lb=$('#lb'),lbi=$('#lbi');
+document.addEventListener('click',e=>{const g=e.target.closest('#mas .fig,#strip .fig');if(!g)return;const i=$('img',g);if(!i||!i.src)return;
+  lbi.src=i.src;const go=()=>requestAnimationFrame(()=>lb.classList.add('on'));lbi.decode?lbi.decode().then(go,go):go()});   /* open only once decoded */
+lb.onclick=()=>lb.classList.remove('on');addEventListener('keydown',e=>e.key==='Escape'&&lb.classList.remove('on'));
+
+/* router with smooth cross-fade */
+const T={home:'Shaadi Seasons – Indian Wedding Photography & Films',about:'About us – Shaadi Seasons',portfolio:'Portfolio – Shaadi Seasons',films:'Films – Shaadi Seasons',services:'Services – Shaadi Seasons',contact:'Contact – Shaadi Seasons'};
+const main=$('#main'),hd=$('#hd'),red=matchMedia('(prefers-reduced-motion:reduce)').matches;let cur,busy,sc,sk=0;
+const setSc=()=>{sk=0;const v=scrollY>40;if(v!==sc){sc=v;hd.classList.toggle('sc',v)}};
+const show=id=>{$$('.page').forEach(p=>p.classList.toggle('on',p.id==='p-'+id));document.body.dataset.page=id;
+  $$('.lk a').forEach(a=>a.classList.toggle('act',a.dataset.nav===id));hd.classList.remove('open');document.title=T[id];scrollTo({top:0,behavior:'instant'});
+  watch($('#p-'+id));reveal($('#p-'+id));if(id==='portfolio')ensure();setSc()};
+const go=id=>{if(!T[id])id='home';if(busy||id===cur)return;
+  if(!cur||red){show(id);cur=id;return}
+  busy=1;main.classList.add('fade');setTimeout(()=>{show(id);cur=id;   /* let the new page lay out before fading in */
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{main.classList.remove('fade');setTimeout(()=>busy=0,450)}))},450)};
+document.addEventListener('click',e=>{const a=e.target.closest('[data-nav]');if(a){e.preventDefault();try{location.hash=a.dataset.nav}catch(_){}go(a.dataset.nav)}});
+addEventListener('hashchange',()=>go(location.hash.slice(1)));
+$('#bg').onclick=()=>hd.classList.toggle('open');
+addEventListener('scroll',()=>{sk||(sk=requestAnimationFrame(setSc))},{passive:true});
+go(location.hash.slice(1));
+
+/* contact: WhatsApp + email */
+const wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t||'Hello Shaadi Seasons! I’d like to know more about your wedding photography and film packages.')}`;
+$$('[data-wa]').forEach(a=>{a.href=wa();a.target='_blank';a.rel='noopener'});
+$$('[data-ic]').forEach(a=>a.insertAdjacentHTML('afterbegin',WAI));
+$$('[data-tel]').forEach(a=>{a.href='tel:'+PHONE.replace(/\s/g,'');a.textContent=a.classList.contains('up')?'Call '+PHONE:PHONE});
+$$('[data-mail-t]').forEach(a=>{a.href='mailto:'+EMAIL;a.textContent=EMAIL});
+const mail=(s,b)=>`mailto:${EMAIL}?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(b)}`;
+$$('[data-mail]').forEach(a=>a.href=mail('Wedding photography enquiry','Hi Shaadi Seasons! Please share your availability, package details and the next steps.'));
+const msg=d=>{const v=k=>(d.get(k)||'').toString().trim();return `Name: ${v('n')}\nPhone: ${v('p')}\nEvent: ${v('t')}\nDate: ${v('d')||'Not decided'}\nVenue / city: ${v('v')||'Not decided'}\n\n${v('m')}`};
+$('#cf').onsubmit=e=>{e.preventDefault();const a=document.createElement('a');a.href=wa('Hello Shaadi Seasons!\n\n'+msg(new FormData(e.target)));a.target='_blank';a.rel='noopener';a.click()};
+$('#em').onclick=()=>{const fm=$('#cf');if(!fm.reportValidity())return;const d=new FormData(fm),a=document.createElement('a');a.href=mail(`${d.get('t')} enquiry from ${d.get('n')}`,msg(d));a.click()};
+</script>
+</body>
+</html>
